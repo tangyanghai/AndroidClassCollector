@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tyh.java.second_lib" >
+
+    <application>
+        <activity android:name=".CSecond" />
+    </application>
+</manifest>
