@@ -220,11 +220,16 @@ public class StartActivityHelper {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            if (expander != null) {
+                expander.expandOnThrowException(e);
+            }
         }
     }
 
     /**
      * 拓展类
+     * <p>为什么不做成接口? 做成类可以只去重写自己需要的方法</p>
+     * <p></p>
      * {@link #expandIntent(Intent)}将Intent交给外界处理
      * {@link #expandAfterStartActivity()}在startActivity或者startActivityForResult之后会执行
      */
@@ -233,6 +238,9 @@ public class StartActivityHelper {
         }
 
         public void expandAfterStartActivity() {
+        }
+
+        public void expandOnThrowException(Exception e) {
         }
     }
 
