@@ -17,6 +17,12 @@ import java.util.ArrayList;
  */
 public class StartActivityHelper {
 
+    private Context context;
+    private Intent in;
+    private Integer codeRequest;
+    private Bundle options;
+    private ActHelperExpander expander;
+
     private StartActivityHelper(Context context) {
         this.context = context;
         this.in = new Intent();
@@ -25,14 +31,6 @@ public class StartActivityHelper {
     public static StartActivityHelper get(Context context) {
         return new StartActivityHelper(context);
     }
-
-
-    Context context;
-    Intent in;
-    Integer codeRequest;
-    Bundle options;
-    ActHelperExpander expander;
-
 
     public StartActivityHelper put(String key, boolean o) {
         in.putExtra(key, o);
